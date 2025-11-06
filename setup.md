@@ -23,8 +23,8 @@ VM Configs:
 
 > **Note:** You can also use **SSH public-key authentication** however i used password authentication for simplification and allow for brute-force attack simulation.
 
-![vmb2](/images/vmbasics2.png)
-![vmd](/images/vmdisk.png)
+![vmb2](/assets/images/vmbasics2.png)
+![vmd](/assets/images/vmdisk.png)
 
 ---
 
@@ -49,7 +49,7 @@ listen_endpoints = tcp:22:interface=0.0.0.0
 
 4. Finally configure the **NSG (Network Security Group)** on the Azure VM to allow inbound traffic for both ports: the honeypot (22) and your real SSH port (e.g 1111)
 
-![nsg](/images/nsg.png)
+![nsg](/assets/images/nsg.png)
 
 > **Note:** Give the rule for the real SSH port a higher priority (lower priority number) so you can still connect to the VM for administration. You should have two separate inbound rules: one for the real SSH port and one for the honeypot (22).
 
@@ -100,9 +100,9 @@ format = text
   - The JSON schema should match `cowrie.json` which is located in the Cowrie logs directory.
   - For Syslog, enable facilities **LOG_AUTH** and **LOG_AUTHPRIV** to capture authentication events.
 
-![datasources](/images/ds.png)
-![syslog](/images/syslog.png)
-![json](/images/custjson.png)
+![datasources](/assets/images/ds.png)
+![syslog](/assets/images/syslog.png)
+![json](/assets/images/custjson.png)
 
 #### Verification
 - Test data ingestion in the LAW using `Syslog | take 10`
@@ -118,50 +118,50 @@ format = text
 - First attach Sentinel to your existing LAW.
 - Then add the **Syslog (via AMA)** data connector and link it to your DCR.
 
-![dataconnector](/images/dc.png)
+![dataconnector](/assets/images/dc.png)
 
 ### Workbooks
 - Workbooks allow you to visualise multiple datasets in a single, real-time dashboard
 - Create a workbook in Sentinel → Workbooks → Create new.
  
-![wb](/images/wb.png)
+![wb](/assets/images/wb.png)
 
 - My workbook contains **3** key queries:
 
-![wbqueries](/images/wbqueries.png)
+![wbqueries](/assets/images/wbqueries.png)
 
 
 1. Aggregate data count (heartbeat, Syslog, JSON, Alerts etc.)
 
-![query1](/images/query1.png)
+![query1](/assets/images/query1.png)
 
 
 2. Syslog data - default but with cleaned columns.
 > Note: In KQL `project-away` gets rid of chosen columns which makes data more clean and gets rid of blank/unnecessary columns.
 
-![query2](/images/query2.png)
+![query2](/assets/images/query2.png)
 
 
 3. Cowrie JSON logs - extracts attacker IPs, resolves geolocation via latitude/longitude and maps the source country & city.
 
-![query3](/images/query3.png)
+![query3](/assets/images/query3.png)
 
 
 ### Creating automated alerts
 - Sentinel can automatically trigger alerts when certain KQL conditions are met.
 
-![alerts](/images/alerts.png)
+![alerts](/assets/images/alerts.png)
 
 -  I kept it simple and created 2 alerts:
 1. Brute Force SSH attempts - Detects repeated failed SSH logins from the same IP and creates an alert if it exceeds 2 attempts.
 
-![bf](/images/bfgeneral.png)
-![bf1](/images/bfrl1.png)
-![bf2](/images/bfrl2.png)
+![bf](/assets/images/bfgeneral.png)
+![bf1](/assets/images/bfrl1.png)
+![bf2](/assets/images/bfrl2.png)
 
 2. Successful SSH Logins - Detects successful logins and extracts the source IP for correlation.
 
-![sl1](/images/sl1.png)
-![sl2](/images/sl2.png)
+![sl1](/assets/images/sl1.png)
+![sl2](/assets/images/sl2.png)
 
 
