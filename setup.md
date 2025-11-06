@@ -116,55 +116,54 @@ format = text
 ---
 
 ### Microsoft Sentinel
-- This will allow us to collate logs into one area and set up alerts.
-- First create a Sentinel subscription and create a resource which you can link to your existing LAW.
-- Then create a data connector called Syslog via AMA and link that to the DCR.
-- Now all logs can also come up on Sentinel.
-- It should like like as shown under
+- Microsoft Sentinel provides **SIEM & SOAR** capabilities for alerting, analytics & visualisation.
+- First attach Sentinel to your existing LAW.
+- Then add the **Syslog (via AMA)** data connector and link it to your DCR.
 
 ![dataconnector](/images/dc.png)
 
 ### Workbooks
-- a Workbook allows for multiple data points to come up on one page which is updated realtime.
-- Creating a workbook is simple just click create a workbook on the Sentinel workbook tab.
+- Workbooks allow you to visualise multiple datasets in a single, real-time dashboard
+- Create a workbook in Sentinel → Workbooks → Create new.
  
 ![wb](/images/wb.png)
 
-- I have 3 queries open on this tab; Syslog, JSON logs and an overall data collection query which shows amount of different logs (heartbeat, syslog, json) in a bar chart.
+- My workbook contains **3** key queries:
 
 ![wbqueries](/images/wbqueries.png)
 
-- The first query is a default one that comes with all workbooks
+
+1. Aggregate data count (heartbeat, Syslog, JSON, Alerts etc.)
 
 ![query1](/images/query1.png)
 
-- The second query is a default Syslog query with KQL but with added code to remove unneccessary/blank
-columns.
+
+2. Syslog data - default but with cleaned columns.
+> Note: In KQL `project-away` gets rid of chosen columns which makes data more clean and gets rid of blank/unnecessary columns.
 
 ![query2](/images/query2.png)
 
-- The third query is a JSON query with KQL but it adds geolocation which takes the location of the incoming ssh traffic by ip and gives it a longitutude/latitude and displays the potential country and city the attacker is in.
+
+3. Cowrie JSON logs - extracts attacker IPs, resolves geolocation via latitude/longitude and maps the source country & city.
 
 ![query3](/images/query3.png)
 
+
 ### Creating automated alerts
-- Sentinel allows us to create automated alerts if our KQL code is triggered.
+- Sentinel can automatically trigger alerts when certain KQL conditions are met.
 
 ![alerts](/images/alerts.png)
 
-- We will create 2 alerts: successfull ssh login and bruteforce ssh attempts.
-- Below you will see the configurations and KQL code for each of the alerts I have created.
+-  I kept it simple and created 2 alerts:
+1. Brute Force SSH attempts - Detects repeated failed SSH logins from the same IP and creates an alert if it exceeds 2 attempts.
 
 ![bf](/images/bfgeneral.png)
-
 ![bf1](/images/bfrl1.png)
-
-- This alert looks for failed ssh attempts and if they surpass 2 the ip is extracted from the logs and an alert is made with the suspicous ip.
-
 ![bf2](/images/bfrl2.png)
+
+2. Successful SSH Logins - Detects successful logins and extracts the source IP for correlation.
 
 ![sl1](/images/sl1.png)
 ![sl2](/images/sl2.png)
 
-- This does the same thing as the alert above but looks for successful logins and extracts the ip associated with that login.
 
