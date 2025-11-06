@@ -166,4 +166,10 @@ format = text
 ![sl1](/assets/images/sl1.png)
 ![sl2](/assets/images/sl2.png)
 
+## Automation
+- We can also add some slight automation (nothing too crazy) by adding an automation rule onto our alerts
+- When an incident is created the rule will automatically assign the incident to a specific person and give a task to that person.
+
+![automation](/assets/images/automation.jpg)
+
 
