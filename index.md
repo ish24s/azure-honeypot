@@ -1,5 +1,8 @@
 #  SSH Honeypot & SIEM Integration
 
+## Project Documentation
+- [Setup & Configuration](setup.md)
+- [Analysis & Findings]()
 
 ## 🎯 Project Overview
 
@@ -14,20 +17,26 @@ The main objectives are:
 > ⚠️ Disclaimer: This is more of a **report** rather then a guide/walkthrough. I haven't documented every single step or command - I encourage readers to research, experiment, and adapt the setup to their own goals. Use this repository as an **idea/starting point**, not a **step-by-step script**.
 
 ---
-
 ## ⚙️ Key Components
 
 | Component | Description |
 |------------|--------------|
 | **Azure VM** | Cloud-hosted Linux server for running the honeypot |
-| **Cowrie Honeypot** | Simulated SSH environment capturing attacker activity |
+| **Cowrie Honeypot** | Simulated SSH environment with many features such as log collection & session recording |
 | **Log Analytics Workspace** | Collects and queries system & honeypot logs |
 | **Microsoft Sentinel** | SIEM platform for correlation, alerting & dashboards |
 | **KQL Queries** | Used for data filtering, IP extraction & alert logic |
+| **Data Collection Rules** | Defines how and what type of data is collected |
+
 
 ---
 
 ## 📊 Features
 
-- SSH hon
+- SSH honeypot configured to run on **port 22** with realistic file system emulation & terminal recording.
+- Dual log forwarding setup (**Syslog + JSON**) via **Azure Monitor Agent (AMA)**.
+- **Sentinel Workbooks** visualising various data fields including source IP, geolocation & log type
+- Automated alerts detecting **brute-force attempts** and **successful logins**.
+- Clean, documented configuration for **educational & practical reference**.
+
 
