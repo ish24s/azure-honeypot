@@ -47,3 +47,4 @@ The main objectives are:
 - [Microsoft Sentinel Overview](https://learn.microsoft.com/en-us/azure/sentinel/)
 - [KQL Query Language Guide](https://learn.microsoft.com/en-us/azure/data-explorer/kusto/query/)
 - [Alternative Honeypots](https://github.com/paralax/awesome-honeypots)
+- [Alternative SIEM's](https://redcanary.com/cybersecurity-101/security-operations/top-free-siem-tools/)
