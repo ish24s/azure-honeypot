@@ -3,7 +3,7 @@
 #### ⚠️ Disclaimer: 
 This is more of a report rather then a guide/walkthrough. I haven't documented every single step or command - I encourage readers to research, experiment, and adapt the setup to their own goals. Use this repository as an idea/starting point, not a step-by-step script.
 
-## Project Goals
+## Setup Goals
 - Deploy a **Azure VM** as a secure, monitored host environment.
 - Install & configure a Cowrie SSH honeypot to simulate an interactive **SSH** service.
 - Forward system & honeypot logs to **Microsoft Sentinel** for detection & analysis.
