@@ -1,6 +1,6 @@
 #  SSH Honeypot & SIEM Integration
 
-## Project Documentation
+## Documentation
 - [Setup & Configuration](setup.md)
 - [Analysis & Findings]()
 
@@ -39,4 +39,11 @@ The main objectives are:
 - Automated alerts detecting **brute-force attempts** and **successful logins**.
 - Clean, documented configuration for **educational & practical reference**.
 
+---
 
+## 🔗 Useful Links
+- [Cowrie Documentation](https://docs.cowrie.org/en/latest/)
+- [Microsoft Azure VM Documentation](https://learn.microsoft.com/en-us/azure/virtual-machines/)
+- [Microsoft Sentinel Overview](https://learn.microsoft.com/en-us/azure/sentinel/)
+- [KQL Query Language Guide](https://learn.microsoft.com/en-us/azure/data-explorer/kusto/query/)
+- [Alternative Honeypots](https://github.com/paralax/awesome-honeypots)
