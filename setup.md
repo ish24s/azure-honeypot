@@ -1,7 +1,5 @@
 # 🧩 Setup & Configuration
 
-#### ⚠️ Disclaimer: 
-This is more of a **report** rather then a guide/walkthrough. I haven't documented every single step or command - I encourage readers to research, experiment, and adapt the setup to their own goals. Use this repository as an **idea/starting point**, not a step-by-step script.
 
 ## Setup Goals
 - Deploy a **Azure VM** as a secure, monitored host environment.
