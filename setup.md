@@ -19,7 +19,7 @@
 VM Configs:
 > **Note:** All other sections were left as default
 
-![vmb1](/images/vmbasics1.png)
+![vmb1](/assets/images/vmbasics1.png)
 
 > **Note:** You can also use **SSH public-key authentication** however i used password authentication for simplification and allow for brute-force attack simulation.
 
