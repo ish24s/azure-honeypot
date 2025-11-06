@@ -2,7 +2,8 @@
 
 ## Documentation
 - [Setup & Configuration](setup.md)
-- [Analysis & Findings]()
+- [Analysis & Findings](analysis.md)
+- [Simulation](simulation.md)
 
 ## 🎯 Project Overview
 
