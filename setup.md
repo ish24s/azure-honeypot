@@ -7,7 +7,7 @@ This is more of a report rather then a guide/walkthrough. I haven't documented e
 - Deploy a **Azure VM** as a secure, monitored host environment.
 - Install & configure a Cowrie SSH honeypot to simulate an interactive **SSH** service.
 - Forward system & honeypot logs to **Microsoft Sentinel** for detection & analysis.
-- Build **KQL** queries, workbooks and alert rules for real-time attack detection & visualisation.
+- Build custom **KQL** queries, workbooks and alert rules for real-time attack detection & visualisation.
 
 ---
 
