@@ -167,8 +167,8 @@ format = text
 ![sl2](/assets/images/sl2.png)
 
 ## Automation
-- We can also add some slight automation (nothing too crazy) by adding an automation rule onto our alerts
-- When an incident is created the rule will automatically assign the incident to a specific person and give a task to that person.
+- We can introduce light automation by adding an automation rule to our brute-force alert.
+- When an incident is created the rule will automatically assign the the incident to a designated responder and generate a corresponding task for them.
 
 ![automation](/assets/images/automation.jpg)
 
