@@ -115,6 +115,8 @@ format = text
 
 ### Microsoft Sentinel
 - Microsoft Sentinel provides **SIEM & SOAR** capabilities for alerting, analytics & visualisation.
+> Note: While Microsoft Sentinel is a cloud-based SIEM, there are alternative free or open-source SIEM solutions such as **Wazuh, Graylog & OSSIM** that can also be used depending on your environment and requirements.
+
 - First attach Sentinel to your existing LAW.
 - Then add the **Syslog (via AMA)** data connector and link it to your DCR.
 
