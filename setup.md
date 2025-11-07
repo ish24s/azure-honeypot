@@ -18,9 +18,11 @@
 
 VM Configs:
 > **Note:** All other sections were left as default
+
 ![vmb1](/assets/images/vmbasics1.png)
 
 > **Note:** You can also use **SSH public-key authentication** however i used password authentication for simplification and allow for brute-force attack simulation.
+
 ![vmb2](/assets/images/vmbasics2.png)
 ![vmd](/assets/images/vmdisk.png)
 
@@ -132,7 +134,9 @@ format = text
 
 2. Syslog data - default but with cleaned columns.
 > Note: In KQL `project-away` gets rid of chosen columns which makes data more clean and gets rid of blank/unnecessary columns.
+
 ![query2](/assets/images/query2.png)
+
 
 
 3. Cowrie JSON logs - extracts attacker IPs, resolves geolocation via latitude/longitude and maps the source country & city.
