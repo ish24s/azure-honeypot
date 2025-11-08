@@ -15,7 +15,7 @@ The main objectives are:
 - Integrate with **Microsoft Sentinel** for event monitoring and alert creation.
 - Develop **KQL queries** and **interactive dashboards** to analyse attack trends.
 
-> ⚠️ Disclaimer: This is more of a **report** rather then a guide/walkthrough. I haven't documented every single step or command - I encourage readers to research, experiment, and adapt the setup to their own goals. Use this repository as an **idea/starting point**, not a **step-by-step script**.
+> ⚠️ Disclaimer: This is more of a **report** rather than a guide/walkthrough. I haven't documented every single step or command; I encourage readers to research, experiment, and adapt the setup to their own goals. Use this repository as an **idea/starting point**, not a **step-by-step script**.
 
 ---
 ## ⚙️ Key Components
@@ -36,7 +36,7 @@ The main objectives are:
 
 - SSH honeypot configured to run on **port 22** with realistic file system emulation & terminal recording.
 - Dual log forwarding setup (**Syslog + JSON**) via **Azure Monitor Agent (AMA)**.
-- **Sentinel Workbooks** visualising various data fields including source IP, geolocation & log type
+- **Sentinel Workbooks** visualising various data fields including source IP, geolocation & log type.
 - Automated alerts detecting **brute-force attempts** and **successful logins**.
 - Clean, documented configuration for **educational & practical reference**.
 
@@ -48,4 +48,4 @@ The main objectives are:
 - [Microsoft Sentinel Overview](https://learn.microsoft.com/en-us/azure/sentinel/)
 - [KQL Query Language Guide](https://learn.microsoft.com/en-us/azure/data-explorer/kusto/query/)
 - [Alternative Honeypots](https://github.com/paralax/awesome-honeypots)
-- [Alternative SIEM's](https://redcanary.com/cybersecurity-101/security-operations/top-free-siem-tools/)
+- [Alternative SIEMs](https://redcanary.com/cybersecurity-101/security-operations/top-free-siem-tools/)
