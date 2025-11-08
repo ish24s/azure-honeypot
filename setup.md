@@ -48,7 +48,7 @@ listen_endpoints = tcp:22:interface=0.0.0.0
 ```
 
 4. Finally configure the **NSG (Network Security Group)** on the Azure VM to allow inbound traffic for both ports: the honeypot (22) and your real SSH port (e.g 1111)
-![nsg](/assets/images/nsg.png)
+![nsg](/assets/images/nsg.jpg)
 
 > **Note:** Give the rule for the real SSH port a higher priority (lower priority number) so you can still connect to the VM for administration. You should have two separate inbound rules: one for the real SSH port and one for the honeypot (22).
 
@@ -98,9 +98,9 @@ format = text
 4. In the DCR, add **Linux Syslog** and **Custom JSON logs** as data sources
   - The JSON schema should match `cowrie.json` which is located in the Cowrie logs directory.
   - For Syslog, enable facilities **LOG_AUTH** and **LOG_AUTHPRIV** to capture authentication events.
-![datasources](/assets/images/ds.png)
-![syslog](/assets/images/syslog.png)
-![json](/assets/images/custjson.png)
+![datasources](/assets/images/ds.jpg)
+![syslog](/assets/images/syslog.jpg)
+![json](/assets/images/custjson.jpg)
 
 #### Verification
 - Test data ingestion in the LAW using `Syslog | take 10`
@@ -129,18 +129,18 @@ format = text
 
 
 1. Aggregate data count (heartbeat, Syslog, JSON, Alerts etc.)
-![query1](/assets/images/query1.png)
+![query1](/assets/images/query1.jpg)
 
 
 2. Syslog data - default but with cleaned columns.
 > Note: In KQL `project-away` gets rid of chosen columns which makes data more clean and gets rid of blank/unnecessary columns.
 
-![query2](/assets/images/query2.png)
+![query2](/assets/images/query2.jpg)
 
 
 
 3. Cowrie JSON logs - extracts attacker IPs, resolves geolocation via latitude/longitude and maps the source country & city.
-![query3](/assets/images/query3.png)
+![query3](/assets/images/query3.jpg)
 
 
 ### Creating automated alerts
